@@ -34,7 +34,7 @@ public class AreaServiceImpl implements AreaService {
     @Transactional
     @Override
     public boolean insertArea(Area area) {
-        if(area.getAreaName() != null && "".equals(area.getAreaName())){
+        if(area.getAreaName() != null && !"".equals(area.getAreaName())){
             area.setCreateTime(new Date());
             area.setLastEditTime(new Date());
             try {
@@ -55,7 +55,7 @@ public class AreaServiceImpl implements AreaService {
     @Override
     public boolean updateArea(Area area) {
         //空值判断，主要是areaId不为空
-        if(area.getAreaId() != null && "".equals(area.getAreaId())){
+        if(area.getAreaId() != null && !"".equals(area.getAreaId())){
             //设置默认值
             area.setLastEditTime(new Date());
             try {
